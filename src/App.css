@@ -1,0 +1,133 @@
+/* Base Tailwind Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* External Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* Root Variables */
+:root {
+  --light-color: #569cd2;
+  --thumb-color: #7a7a7a;
+  --track-color: #e0e0e0;
+  --scrollbar-width: 7px;
+  --scrollbar-border-radius: 5px;
+  --scrollbar-thumb-border-width: 0px;
+  --scrollbar-thumb-border-color: #232e33;
+}
+
+/* Global Styles */
+html {
+  background-color: #f3f4f6; /* Light mode background */
+  /* background-image: url('');  
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;   
+  backdrop-filter: blur(50px);  */
+}
+
+html.dark {
+  background-color: #6b7280; /* Dark mode background */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--track-color);
+  border-radius: var(--scrollbar-border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--thumb-color);
+  border-radius: var(--scrollbar-border-radius);
+  border: var(--scrollbar-thumb-border-width) solid var(--scrollbar-thumb-border-color);
+}
+
+/* Scrollbar fallback for non-WebKit browsers */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--thumb-color) var(--track-color);
+  }
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: #f8f2c6;
+  color: #718096;
+}
+
+/* Utility Classes */
+.b {
+  border: 1px solid red;
+}
+
+/* Slick Slider Styles */
+.slick-slide {
+  padding-right: 15px;
+}
+
+.slick-track {
+  margin-left: 0 !important;
+}
+
+.slick-dots li button:before {
+  font-size: 6px !important;
+  width: 10px !important;
+  height: 10px !important;
+  margin-top: 10px !important;
+  color: transparent !important;
+  border: 1px solid #383838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25%;
+  background-color: #383838;
+  animation-duration: 6;
+}
+
+/* Gradient Border Animation */
+.gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+  padding: 5px;
+  border-radius: 50%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient:hover::before {
+  animation: rotateBorder 1s infinite linear;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Active State Styles */
+.active {
+  background: var(--light-color);
+  color: white;
+}
