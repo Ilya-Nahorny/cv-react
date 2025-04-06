@@ -5,34 +5,36 @@ import {
   IoLogoGithub, 
   IoLogoPython,
   IoLogoNodejs,
+  IoLogoWordpress,
 } from "react-icons/io5";
-
+import { SiPrestashop } from "react-icons/si";
 const projectsData = {
   header: {
     title: "My Projects",
     desc: "Projects I developed in different languages",
   },
-  activeButton: "react",
+  activeButton: "wordpress",
   type: "projects",
   buttons: [
+    {
+      name: "Wordpress",
+      tag: "wordpress",
+      desc: "Projects developed using Wordpress",
+      icon: <IoLogoWordpress size={"20px"} />,
+    },
+    {
+      name: "Prestashop",
+      tag: "prestashop",
+      desc: "Projects developed using Prestashop",
+      icon: <SiPrestashop size={"20px"} />,
+    },
     {
       name: "React",
       tag: "react",
       desc: "Projects developed using React",
       icon: <FaReact size={"20px"} />,
     },
-    {
-      name: "Node.js",
-      tag: "nodejs",
-      desc: "Projects developed using Node.js",
-      icon: <IoLogoNodejs size={"20px"} />,
-    },
-    {
-      name: "Python",
-      tag: "python",
-      desc: "Projects developed using Python",
-      icon: <IoLogoPython size={"20px"} />,
-    },
+
   ],
   items: [
     {

@@ -27,7 +27,7 @@ const UserProfileThree = () => {
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
 
   // Full code text for display in the terminal section
-  const fullText = "const dev = {  name: 'John Doe',  role: 'Full Stack Developer', skills: ['React', 'Node.js', 'TypeScript'],  coffee: () => 'Always brewing'};";
+  const fullText = "const dev = {  name: 'Ilya Nahorny',  role: 'Full Stack/WEB Developer', skills: ['React', 'Vue', 'Wordpress', 'PrestaShop'], location: {city: 'Poznań', country: 'Poland'}};";
 
   // Toggle between light and dark theme
   const toggleTheme = () => dispatch(themeChange());
@@ -163,7 +163,7 @@ const UserProfileThree = () => {
                 ))}
               </div>
             </div>
-            <div className="relative z-10">
+            <div className="relative z-10 hidden">
               <div className="bg-white dark:bg-gray-800 rounded-lg p-4 font-mono text-sm text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-700 shadow-lg">
                 <div className="flex items-center mb-2">
                   <FiAward className="mr-2 text-yellow-400" />
@@ -205,22 +205,23 @@ const UserProfileThree = () => {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 flex items-center space-x-2 ${activeTab === name
                       ? "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
                       : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-                      }`}
+                    }`}
                   >
                     <Icon size={16} />
-                    <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
+                    <span>{t(`tabsTitles.${name}`)}</span>
                   </motion.button>
                 ))}
+
               </div>
               <div className="flex items-center space-x-4">
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={toggleTheme}
                   className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   {themeStatus === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
-                </motion.button>
+                </motion.button> */}
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

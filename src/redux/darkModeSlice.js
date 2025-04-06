@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+document.documentElement.classList.add("dark");
+
 const darkModeSlice = createSlice({
   name: "theme",
-  initialState: { theme: "light" },
+  initialState: { theme: "dark" },
   reducers: {
     getLocaleStorageTheme(state) {
       if (localStorage.theme === "dark") {

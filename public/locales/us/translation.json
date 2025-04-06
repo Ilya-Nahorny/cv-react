@@ -1,4 +1,9 @@
 {
+    "tabsTitles": {
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects"
+      },
     "name": "Ilya Nahorny",
     "position": "WEB/Fullstack developer",
     "about": "About Me",
